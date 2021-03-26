@@ -147,7 +147,7 @@ i , img {
   padding: 5px;
 }
 
-.chat-open-left img {
+.chat-open-left img, .contact > img {
   height: 60px;
   border-radius: 50%;
 }
@@ -160,6 +160,26 @@ i , img {
   height: 80%;
   background-image: url(../img/mine.jpg);
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.card {
+  height: 50px;
+  width: 35%;
+  border-radius: 10px;
+  margin: 5px 10px;
+  padding: 5px;
+}
+
+.sent {
+  background-color: #d5f9bb;
+  align-self: flex-end;
+}
+
+.recived {
+  background-color: #FFF;
 }
 
 .text {
@@ -179,4 +199,17 @@ i , img {
   height: 50px;
   border-radius: 10px;
   padding: 0 10px;
+}
+
+.right-side > .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
