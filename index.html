@@ -35,16 +35,16 @@
           <input type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="contatti">
-          <div class="chat-open">
+          <div v-for="info in contacts" class="chat-open">
             <div class="chat-open-left"> 
-              <img src="./assets/img/avatar_4.jpg" alt="">
+              <img :src="'./assets/img/avatar'+ info.avatar + '.jpg'" alt="">
               <div>
-                <p>Michele</p>
-                <p>messaggio</p>
+                <p>{{ info.name }}</p>
+                <p>ultimo messaggio</p>
               </div>
             </div>
             <div class="chat-open-right">
-              <p>data</p>
+              <p></p>
             </div>
             
           </div>
@@ -70,7 +70,10 @@
           </div>
         </div>
         <div class="chat-area">
-          <div class="card sent">
+          <div class="card" :class="(contacts[0].messages[i].status == 'received') ? 'received' : 'sent'"  v-for="(messaggio, i) in contacts[0].messages">
+            <p>{{ contacts[0].messages[i].text }} <span>data</span></p>
+          </div>
+          <!-- <div class="card sent">
             <p>Hai portato a spasso il cane?</p>
           </div>
           <div class="card sent">
@@ -78,7 +81,7 @@
           </div>
           <div class="card recived">
             <p>Tutto fatto!</p>
-          </div>
+          </div> -->
         </div>
         <div class="text">
           <i class="far fa-smile"></i>

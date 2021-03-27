@@ -131,6 +131,7 @@ i , img {
   height: 75%;
   overflow-y: scroll;
   display: flex;
+  flex-direction: column;
   padding: 10px;
 }
 
@@ -140,6 +141,7 @@ i , img {
   justify-content: space-between;
   width: 100%;
   height: 12%;
+  margin-top: 1px;
 }
 
 .chat-open-left , .chat-open-right {
@@ -178,7 +180,7 @@ i , img {
   align-self: flex-end;
 }
 
-.recived {
+.received {
   background-color: #FFF;
 }
 
