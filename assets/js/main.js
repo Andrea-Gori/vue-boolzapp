@@ -87,10 +87,28 @@ var app = new Vue ({
       },
     ],
     chat: 0,
+    msg:"",
   },
   methods: {
     cambioChat: function (i) {
       this.chat = i;
+    },
+    invio: function () {
+      let obj = {
+        date: dayjs().format('DD/MM/YYYY hh:mm'),
+        text: this.msg,
+        status: 'sent',
+      }
+      this.contacts[this.chat].messages.push(obj);
+      this.msg = '';
+      setTimeout(()=> {
+        let newObj = {
+          date: dayjs().format('DD/MM/YYYY hh:mm'),
+          text: 'Ok',
+          status: 'received',
+        }
+        this.contacts[this.chat].messages.push(newObj)
+      }, 1000)
     }
   },
 })

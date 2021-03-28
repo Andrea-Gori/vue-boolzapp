@@ -136,7 +136,6 @@ i , img {
 }
 
 .chat-open {
-  background-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -228,9 +227,13 @@ i , img {
 }
 
 .chat-open:hover{
-  background-color: #778899;
+  background-color: #f5f5f5;
 }
 
 .active {
-  background-color: #778899;
+  background-color: #eaeaea;
+}
+
+.chat-open.active:hover{
+  background-color: #eaeaea;
 }
