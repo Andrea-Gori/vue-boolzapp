@@ -70,7 +70,7 @@ var app = new Vue ({
       },
       {
         name: 'Luisa',
-        avatar: '_4',
+        avatar: '_6',
         visible: true,
         messages: [
           {
@@ -85,9 +85,12 @@ var app = new Vue ({
           }
         ],
       },
-    ]
+    ],
+    chat: 0,
   },
   methods: {
-    
-  }
+    cambioChat: function (i) {
+      this.chat = i;
+    }
+  },
 })
