@@ -88,6 +88,7 @@ var app = new Vue ({
     ],
     chat: 0,
     msg:"",
+    search: "",
   },
   methods: {
     cambioChat: function (i) {
@@ -109,6 +110,7 @@ var app = new Vue ({
         }
         this.contacts[this.chat].messages.push(newObj)
       }, 1000)
-    }
+    },
+    
   },
 })

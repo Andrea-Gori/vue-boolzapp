@@ -153,8 +153,22 @@ i , img {
   border-radius: 50%;
 }
 
+.chat-open-left div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .chat-open-left > div > p {
   margin-left: 10px;
+}
+
+.chat-open-left > div > p.ultimo-messaggio {
+  font-size: 10px;
+}
+
+.chat-open-right {
+  font-size: 10px;
 }
 
 .chat-area {
@@ -167,8 +181,6 @@ i , img {
 }
 
 .card {
-  height: 50px;
-  width: 35%;
   border-radius: 10px;
   margin: 5px 10px;
   padding: 5px;
@@ -192,6 +204,7 @@ i , img {
 
 .received {
   background-color: #FFF;
+  align-self: flex-start;
 }
 
 .text {

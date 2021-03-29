@@ -21,8 +21,8 @@
             <i class="fas fa-comment-alt"></i>
             <i class="fas fa-ellipsis-v"></i>
           </div>
-          
         </div>
+
         <div class="notifiche">
           <i class="fas fa-bell-slash"></i>
           <div>
@@ -30,12 +30,15 @@
             <p class="attiva-notifiche">Attiva le notifiche desktop</p>
           </div>
         </div>
+
         <div class="search">
           <button type="button"><i class="fas fa-search"></i></button>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search">
         </div>
+
         <div class="contatti">
           <div v-for="(info , i) in contacts" 
+            v-if="(info.name.toLowerCase().includes(search.toLowerCase()))"
             class="chat-open" 
             @click="cambioChat(i)"
             :class="(i == chat ) ? 'active' : ''">
@@ -43,13 +46,12 @@
               <img :src="'./assets/img/avatar'+ info.avatar + '.jpg'" alt="">
               <div>
                 <p>{{ info.name }}</p>
-                <p>ultimo messaggio</p>
+                <p class="ultimo-messaggio">{{ info.messages[info.messages.length - 1].text }}</p>
               </div>
             </div>
             <div class="chat-open-right">
-              <p></p>
-            </div>
-            
+              <p>{{ info.messages[info.messages.length - 1].date }}</p>
+            </div>          
           </div>
         </div>
       </div>
@@ -63,12 +65,14 @@
               <p>data</p>
             </div>
           </div>
+
           <div class="comandi">
             <i class="fas fa-search"></i>
             <i class="fas fa-paperclip"></i>
             <i class="fas fa-ellipsis-v"></i>
           </div>
         </div>
+
         <div class="chat-area">
           <div class="card" 
           :class="(contacts[chat].messages[i].status == 'received') ? 'received' : 'sent'"  
